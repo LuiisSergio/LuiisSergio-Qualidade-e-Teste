@@ -42,6 +42,12 @@ public class Fatura {
 	public void addPagamento(Pagamento pagamentoEfetuado) {
 		pagamento.add(pagamentoEfetuado);
 	}
+	public void addArrayPagamento(ArrayList<Pagamento> pagamentos) {
+		for (Iterator<Pagamento> i = pagamentos.iterator(); i.hasNext();) {
+			Pagamento pagamento = i.next();
+			addPagamento(pagamento);
+		}
+	}
 	public String getNomeCliente() {
 		return nomeCliente;
 	}

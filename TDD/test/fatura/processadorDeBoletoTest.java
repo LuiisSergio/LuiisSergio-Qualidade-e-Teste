@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Test;
 import pagamento.Pagamento;
 
 public class processadorDeBoletoTest {
+	
 	private Fatura fatura;
 	private static ArrayList<Pagamento> pagamentos;
 	@BeforeEach
-	public static void inicializaTodos() {
+	public void inicializaTodos() {
 		pagamentos = new ArrayList<Pagamento>();
 	}
-	
+			
 	@Test
 	public void testFatura1() {
 		fatura = new Fatura("Luis Sergio", 1500);
@@ -24,7 +25,7 @@ public class processadorDeBoletoTest {
 		pagamentos.add(new Pagamento(2, 400, "BOLETO"));
 		pagamentos.add(new Pagamento(3, 600, "BOLETO"));
 		fatura.addArrayPagamento(pagamentos);
-		assertEquals(fatura.getFaltaPagar(), 10);
+		assertEquals(fatura.getFaltaPagar(), 0);
 		assertEquals(fatura.isPago(), true);
 	}
 	
