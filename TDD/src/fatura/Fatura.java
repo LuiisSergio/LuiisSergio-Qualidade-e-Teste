@@ -2,6 +2,7 @@ package fatura;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import pagamento.Pagamento;
 
@@ -14,8 +15,28 @@ public class Fatura {
 	
 	public Fatura(String nome, int valor) {
 		setNomeCliente(nome);
+		valorTotal = valor;
+		pagamento = new ArrayList<Pagamento>();
 	}
-
+	
+	public double getValorPago() {
+		double valorPago = 0.0;
+		for (Iterator<Pagamento> i = pagamento.iterator(); i.hasNext();) {
+			Pagamento pagamento = i.next();
+			valorPago += pagamento.getValorPago();
+		}
+		return valorPago;
+	}
+	public double getValorTotal() {
+		return valorTotal;
+	}
+	public double getFaltaPagar() {
+		double valor =  getValorTotal() - getValorPago();
+		return valor > 0 ? valor : 0;
+	}
+	public void addPagamento(Pagamento pagamentoEfetuado) {
+		pagamento.add(pagamentoEfetuado);
+	}
 	public String getNomeCliente() {
 		return nomeCliente;
 	}
