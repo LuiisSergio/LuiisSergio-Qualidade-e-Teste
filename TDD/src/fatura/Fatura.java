@@ -27,6 +27,10 @@ public class Fatura {
 		}
 		return valorPago;
 	}
+	public boolean isPago(){
+		if(pago == false) pago = getFaltaPagar() <= 0 ? true:false;
+		return pago;
+	}
 	public double getValorTotal() {
 		return valorTotal;
 	}
