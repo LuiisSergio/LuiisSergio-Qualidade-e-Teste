@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import pagamento.Pagamento;
 
-public class processadorDeBoletoTest {
+public class processadorDePagamentosTest {
 	
 	private Fatura fatura;
 	private static ArrayList<Pagamento> pagamentos;
