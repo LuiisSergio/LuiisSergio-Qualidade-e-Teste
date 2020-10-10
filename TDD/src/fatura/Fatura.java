@@ -12,4 +12,16 @@ public class Fatura {
 	private double valorTotal;
 	private boolean pago;
 	
+	public Fatura(String nome, int valor) {
+		setNomeCliente(nome);
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+	
 }
