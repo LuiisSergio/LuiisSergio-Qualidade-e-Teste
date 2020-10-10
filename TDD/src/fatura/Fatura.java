@@ -35,6 +35,7 @@ public class Fatura {
 		return valorTotal;
 	}
 	public double getFaltaPagar() {
+		if(pago) return 0;
 		double valor =  getValorTotal() - getValorPago();
 		return valor > 0 ? valor : 0;
 	}
