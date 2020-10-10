@@ -10,12 +10,27 @@ public class Pagamento {
 	private String tipoDePagamento;
 	
 	public Pagamento(int cod, double valor, String tipo) {
-		data = new Date();
+		setData(new Date());
 		valorPago = valor;
 		codigoBoleto = cod;
-		tipoDePagamento = tipo;
+		setTipoDePagamento(tipo);
 	}
 	public double getValorPago() {
 		return valorPago;
+	}
+	public int getCodigoBoleto() {
+		return codigoBoleto;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public String getTipoDePagamento() {
+		return tipoDePagamento;
+	}
+	public void setTipoDePagamento(String tipoDePagamento) {
+		this.tipoDePagamento = tipoDePagamento;
 	}
 }
